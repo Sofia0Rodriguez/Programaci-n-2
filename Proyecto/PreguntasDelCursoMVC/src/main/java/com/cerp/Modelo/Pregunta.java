@@ -111,5 +111,6 @@ package com.cerp.Modelo;
         String[] opciones = fields[3].split(",");
     
         return new Pregunta(idPregunta, pregunta, correcta, opciones);
+
     }
 }

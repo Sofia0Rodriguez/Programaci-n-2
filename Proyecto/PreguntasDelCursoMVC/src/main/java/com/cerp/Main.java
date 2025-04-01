@@ -32,19 +32,20 @@ public class Main {
     public static void main(String[] args) {
         
         // Crear instancia de FileHandler para cargar las preguntas desde preguntas.data
-        FileHandler<Pregunta> fileHandler = new FileHandler<Pregunta>("D:\\_VSCode\\_Programacion3-JAVA\\Curso-JAVA\\Proyectos\\PreguntasDelCursoMVC\\preguntas.data");
+        FileHandler<Pregunta> fileHandler = new FileHandler<>("preguntas.data");
 
-        List<Pregunta> modelo = new ArrayList<>();        
+        List<Pregunta> modelo = new ArrayList<>();
 
         try {
             modelo = fileHandler.fileToList();
         } catch (ClassNotFoundException e) {
-            // TODO Auto-generated catch block
+            System.err.println("Error: Clase no encontrada al leer el archivo.");
             e.printStackTrace();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
+            System.err.println("Error: No se pudo leer el archivo. Verifica la ruta y los permisos.");
             e.printStackTrace();
         }
+
 
         System.out.println("El tamanio es " + modelo.size());
 
